@@ -18,6 +18,12 @@ services:
     environment:
       SET_HOSTNAME: balena
 
+  sound-supervisor:
+    build:
+      context: .
+      dockerfile: ./core/sound-supervisor/Dockerfile.template
+    network_mode: host
+
   # Plugins
   bluetooth:
     build: ./plugins/bluetooth
